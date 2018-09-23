@@ -1,4 +1,4 @@
-import { colors, COLORS_LOAD } from './reducers';
+import { colors, COLORS_LOAD, COLORS_ADD } from './reducers';
 
 describe('color reducers', () => {
 
@@ -16,4 +16,13 @@ describe('color reducers', () => {
     });
     expect(state).toEqual(color);
   });
+
+  it('adds a color', () => {
+    const state = colors([], {
+      type: COLORS_ADD,
+      payload: 'orange'
+    });
+    expect(state).toEqual(['orange']);
+  });
+
 });
