@@ -1,5 +1,6 @@
 export const COLORS_LOAD = 'COLORS_LOAD';
 export const COLORS_ADD = 'COLORS_ADD';
+export const SELECT_COLOR = 'SELECT_COLOR';
 
 export function colors(state = [], { type, payload }) {
   switch(type) {
@@ -12,8 +13,10 @@ export function colors(state = [], { type, payload }) {
   }
 }
 
-export function selectedColor(state = 'white', { type }) {
+export function selectedColor(state = 'white', { type, payload }) {
   switch(type) {
+    case SELECT_COLOR:
+      return payload;
     default:
       return state;
   }
