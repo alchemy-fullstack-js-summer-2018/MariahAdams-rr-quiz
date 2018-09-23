@@ -11,3 +11,10 @@ export function colors(state = [], { type, payload }) {
       return state;
   }
 }
+
+export function selectedColor(state = 'white', { type }) {
+  switch(type) {
+    default:
+      return state;
+  }
+}
