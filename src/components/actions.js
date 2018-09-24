@@ -2,6 +2,10 @@ import { COLORS_LOAD, COLORS_ADD, SELECT_COLOR } from './reducers';
 
 const colors = ['green', 'red', 'purple'];
 
+// const colors = () => [
+//   addColor('blue').payload
+// ];
+
 export const loadColors = () => {
   return {
     type: COLORS_LOAD,

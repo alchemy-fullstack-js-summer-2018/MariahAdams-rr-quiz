@@ -12,7 +12,8 @@ class ColorChooser extends Component {
     colors: PropTypes.array,
     selectedColor: PropTypes.string,
     loadColors: PropTypes.func,
-    onSelect: PropTypes.func
+    onSelect: PropTypes.func,
+    addColor: PropTypes.func
   };
   
   componentDidMount() {
@@ -23,7 +24,7 @@ class ColorChooser extends Component {
   }
   
   render() { 
-    const { colors, onSelect } = this.props;
+    const { colors, onSelect, addColor } = this.props;
 
     return (
       <Fragment>
