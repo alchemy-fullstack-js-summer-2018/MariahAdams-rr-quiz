@@ -18,15 +18,20 @@ class RainbowLightBulb extends Component {
   };
   
   render() { 
-    
+    const { on } = this.state;
+    const { selectedColor } = this.props;
 
     return (
       <section>
         <h2>RainbowLightBulb</h2>
 
-        <button onClick={this.handleClick} style={{ backgroundColor: this.state.on ? 'green' : 'red' }}>
-          {this.state.on ? 'ON' : 'OFF'}
+        <button onClick={this.handleClick} style={{ backgroundColor: on ? 'green' : 'red' }}>
+          {on ? 'ON' : 'OFF'}
         </button>
+
+        {on &&
+          <span style={{ backgroundColor: selectedColor }} className="color">{selectedColor}</span>
+        }
       </section>
     );
   }
