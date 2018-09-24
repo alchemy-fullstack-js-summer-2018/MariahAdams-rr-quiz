@@ -11,27 +11,31 @@ class ColorChooser extends Component {
   static propTypes = {
     colors: PropTypes.array,
     selectedColor: PropTypes.string,
-    loadColors: PropTypes.func
+    loadColors: PropTypes.func,
+    onSelect: PropTypes.func
   };
-
+  
   componentDidMount() {
-    this.props.loadColors(['green', 'blue', 'purple']);
+    const green = {
+      name: 'green'
+    };
+    this.props.loadColors([green, 'blue', 'purple']);
   }
   
   render() { 
-    const { selectedColor } = this.props;
+    const { colors, onSelect } = this.props;
 
     return (
       <Fragment>
         <h2>ColorChooser</h2>
 
-        <Color
-          selectedColor={selectedColor}
-        />
+        <ul>
+          {colors.map(selectedColor => {
+            return <Color key={selectedColor} selectedColor={selectedColor} onSelect={onSelect}/>;
+          })}
+        </ul>
 
-        <AddColor
-        
-        />
+        <AddColor addColor={addColor}/>
 
       </Fragment>
     );
