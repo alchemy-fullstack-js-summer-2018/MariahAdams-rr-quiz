@@ -24,12 +24,12 @@ class ColorChooser extends Component {
     this.props.loadColors([green, 'blue', 'purple']);
   }
 
-  // handleSelect = () => {
-  //   this.props.selectColor();
-  // };
+  handleSelect = () => {
+    this.props.selectColor();
+  };
   
   render() { 
-    const { colors, addColor, onSelect } = this.props;
+    const { colors, addColor } = this.props;
 
     return (
       <Fragment>
@@ -37,7 +37,7 @@ class ColorChooser extends Component {
 
         <ul>
           {colors.map(selectedColor => {
-            return <Color key={selectedColor} selectedColor={selectedColor} selectColor={selectColor} onSelect={onSelect} />;
+            return <Color key={selectedColor} selectedColor={selectedColor} selectColor={selectColor} onSelect={this.handleSelect} />;
           })}
         </ul>
 
