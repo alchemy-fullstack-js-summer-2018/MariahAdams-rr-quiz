@@ -6,22 +6,22 @@ class Color extends Component {
   static propTypes = {
     onSelect: PropTypes.func,
     selectColor: PropTypes.func,
-    selectedColor: PropTypes.string
+    color: PropTypes.string
   };
 
   handleClick = () => {
     console.log('here');
-    const { selectedColor, onSelect } = this.props;
-    onSelect(selectedColor);
-    console.log('selectedColor', selectedColor);
+    const { color, onSelect } = this.props;
+    onSelect(color);
+    console.log('color', color);
   };
   
   render() { 
-    const { selectedColor } = this.props;
+    const { color } = this.props;
 
     return (
       <li>
-        <span onClick={this.handleClick}>{selectedColor}</span>
+        <span onClick={this.handleClick}>{color}</span>
       </li>
     );
   }
