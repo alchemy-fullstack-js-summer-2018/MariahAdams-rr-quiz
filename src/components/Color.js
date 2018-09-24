@@ -11,8 +11,8 @@ class Color extends Component {
 
   handleClick = () => {
     console.log('here');
-    const { color, onSelect } = this.props;
-    onSelect(color);
+    const { color, onSelect, selectColor } = this.props;
+    selectColor(color);
     console.log('color', color);
   };
   

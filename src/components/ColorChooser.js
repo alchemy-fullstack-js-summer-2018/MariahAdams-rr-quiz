@@ -22,6 +22,7 @@ class ColorChooser extends Component {
   }
 
   handleSelect = () => {
+    console.log('selectColor', selectColor());
     this.props.selectColor();
   };
   
