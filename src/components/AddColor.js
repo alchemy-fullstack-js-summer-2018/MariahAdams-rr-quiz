@@ -13,8 +13,6 @@ class AddColor extends Component {
   };
 
   handleSubmit = event => {
-    // const { color } = this.state;
-    // this.props.addColor(color);
     event.preventDefault();
     this.props.addColor(this.state.color);
   };
@@ -22,11 +20,6 @@ class AddColor extends Component {
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
   };
-
-  // handleClick = () => {
-  //   const { color } = this.state;
-  //   this.props.addColor(color);
-  // };
   
   render() { 
     const { color } = this.state;
@@ -34,7 +27,6 @@ class AddColor extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input type='text' value={color} name='color' onChange={this.handleChange}/>
-        {/* <button onClick={this.handleClick}>Add Color</button> */}
         <button type='submit'>Add Color</button>
       </form>
     );
